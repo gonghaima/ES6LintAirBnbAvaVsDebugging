@@ -2,6 +2,7 @@ export default class Checkout {
   constructor(priceRule){
     this.priceRule = priceRule;
     console.log('price rule: ', this.priceRule);
+    this.items=[];
   }
 
   // Getter
@@ -15,5 +16,12 @@ export default class Checkout {
 
   findOutToday(){
     return new Date().getDate();
+  }
+
+  scan(item){
+    this.items.push(item);
+  }
+  showItems(){
+    return this.items;
   }
 };

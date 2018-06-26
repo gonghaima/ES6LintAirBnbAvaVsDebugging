@@ -1,24 +1,22 @@
 {
   "version": "0.2.0",
-  "configurations": [
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch via NPM",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "run-script",
-        "start"
-      ],
-      "port": 9229
+  "configurations": [{
+    "type": "node",
+    "request": "launch",
+    "name": "Launch via Babel",
+    "program": "${workspaceRoot}/dist/index.js",
+    "stopOnEntry": false,
+    "runtimeExecutable": "babel-node",
+    "cwd": "${workspaceRoot}",
+    "runtimeArgs": ["--inspect", "--nolazy", "--debug-brk"],
+    "env": {
+      "NODE_ENV": "development",
+      "BABEL_ENV": "debug"
     },
-    {
-      "type": "node",
-      "request": "launch",
-      "sourceMaps": true,
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/index.js",
-      "runtimeExecutable": "${workspaceRoot}/node_modules/babel-cli/lib/babel-node.js"
-    }
-  ]
+    "sourceMaps": true,
+    "preLaunchTask": "build",
+    "outFiles": ["${workspaceRoot}/dist/**.js"],
+    "port": 9229
+  }],
+  "compounds": []
 }

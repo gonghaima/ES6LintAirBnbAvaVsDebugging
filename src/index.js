@@ -12,6 +12,8 @@ import Checkout from './checkout';
 var co = new Checkout(new PricingRules());
 console.log(co.checkoutName);
 console.log(co.findOutToday());
+console.log(co.scan({key:"sdfe233254ds"}));
+console.log(co.showItems());
 // console.log(co.cPriceRule);
 
 
