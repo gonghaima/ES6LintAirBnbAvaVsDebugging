@@ -4,7 +4,7 @@
     "type": "node",
     "request": "launch",
     "name": "Launch via Babel",
-    "program": "${workspaceRoot}/dist/index.js",
+    "program": "${workspaceRoot}/src/index.js",
     "stopOnEntry": false,
     "runtimeExecutable": "babel-node",
     "cwd": "${workspaceRoot}",
@@ -15,7 +15,7 @@
     },
     "sourceMaps": true,
     "preLaunchTask": "build",
-    "outFiles": ["${workspaceRoot}/dist/**.js"],
+    "outFiles": ["${workspaceRoot}/src/**.js"],
     "port": 9229
   }],
   "compounds": []
