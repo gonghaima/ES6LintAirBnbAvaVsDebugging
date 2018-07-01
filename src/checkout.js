@@ -7,6 +7,7 @@ export default class Checkout {
 
   // Getter
   get checkoutName(){
+    const rl = this.priceRule;
     return 'myCheckout Name';
   }
 
@@ -14,12 +15,12 @@ export default class Checkout {
     return this.priceRule;
   }
 
-  findOutToday(){
-    return new Date().getDate();
-  }
-
   scan(item){
-    this.items.push(item);
+    const result = this.items.push(item);
+    return result;
+  }
+  total(){
+    return this.priceRule.total(this.items);
   }
   showItems(){
     return this.items;

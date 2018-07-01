@@ -6,7 +6,7 @@
   }
 
   // Getter
-  _createClass(Checkout, [{ key: 'findOutToday', value: function findOutToday()
+  _createClass(Checkout, [{ key: 'scan', value: function scan(
 
 
 
@@ -14,15 +14,16 @@
 
 
 
-    {
-      return new Date().getDate();
-    } }, { key: 'scan', value: function scan(
 
     item) {
-      this.items.push(item);
+      var result = this.items.push(item);
+      return result;
+    } }, { key: 'total', value: function total()
+    {
+      return this.priceRule.total(this.items);
     } }, { key: 'showItems', value: function showItems()
     {
       return this.items;
-    } }, { key: 'checkoutName', get: function get() {return 'myCheckout Name';} }, { key: 'cPriceRule', get: function get() {return this.priceRule;} }]);return Checkout;}();exports.default = Checkout;
+    } }, { key: 'checkoutName', get: function get() {var rl = this.priceRule;return 'myCheckout Name';} }, { key: 'cPriceRule', get: function get() {return this.priceRule;} }]);return Checkout;}();exports.default = Checkout;
 ;
 //# sourceMappingURL=checkout.js.map
