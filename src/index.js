@@ -27,3 +27,5 @@ co2.scan('homi');
 var total3= co2.total();
 
 console.log(total1);
+console.log(total2);
+console.log(total3);
