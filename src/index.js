@@ -1,9 +1,9 @@
 const CheckOut = require('./checkout');
+// import PricingRules from './pricingRules';
 import PricingRules from './pricingRules';
 import Checkout from './checkout';
 
 var co = new Checkout(new PricingRules());
-
 co.scan('cari');
 co.scan('cari');
 co.scan('cari');

@@ -11,19 +11,18 @@
 
 
 
-
-
-
-
     item) {
       var result = this.items.push(item);
       return result;
     } }, { key: 'total', value: function total()
     {
-      return this.priceRule.total(this.items);
-    } }, { key: 'showItems', value: function showItems()
-    {
-      return this.items;
-    } }, { key: 'checkoutName', get: function get() {var rl = this.priceRule;return 'myCheckout Name';} }, { key: 'cPriceRule', get: function get() {return this.priceRule;} }]);return Checkout;}();exports.default = Checkout;
+      return this.format(this.priceRule.total(this.items));
+    } }, { key: 'format', value: function format(
+    data) {
+      if (Math.floor(data) === data) {
+        return '$ ' + data + '.00';
+      }
+      return '$ ' + data;
+    } }, { key: 'checkoutName', get: function get() {var rl = this.priceRule;return 'myCheckout Name';} }]);return Checkout;}();exports.default = Checkout;
 ;
 //# sourceMappingURL=checkout.js.map

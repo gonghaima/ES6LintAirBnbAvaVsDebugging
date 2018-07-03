@@ -1,7 +1,6 @@
 export default class Checkout {
   constructor(priceRule){
     this.priceRule = priceRule;
-    console.log('price rule: ', this.priceRule);
     this.items=[];
   }
 
@@ -9,10 +8,6 @@ export default class Checkout {
   get checkoutName(){
     const rl = this.priceRule;
     return 'myCheckout Name';
-  }
-
-  get cPriceRule(){
-    return this.priceRule;
   }
 
   scan(item){
@@ -27,8 +22,5 @@ export default class Checkout {
       return `\$ ${data}.00`;
     }
     return `\$ ${data}`
-  }
-  showItems(){
-    return this.items;
   }
 };
