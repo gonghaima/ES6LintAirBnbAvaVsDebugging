@@ -4,7 +4,7 @@ export default class PricingRules {
     this.productList = JSON.parse(JSON.stringify(productData));
   }
 
-  total(items) {
+  calc(items) {
     /*** cari */
     let cari_num = [...items].filter(c => c === 'cari').length;
     const free_cari_num = Math.floor(cari_num / 3);

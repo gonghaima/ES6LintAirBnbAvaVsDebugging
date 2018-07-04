@@ -15,7 +15,7 @@ export default class Checkout {
     return result;
   }
   total(){
-    return this.format(this.priceRule.total(this.items));
+    return this.format(this.priceRule.calc(this.items));
   }
   format(data){
     if(Math.floor(data)===data){
