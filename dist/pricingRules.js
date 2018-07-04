@@ -2,7 +2,7 @@
 PricingRules = function () {
   function PricingRules() {_classCallCheck(this, PricingRules);
     this.productList = JSON.parse(JSON.stringify(_product2.default));
-  }_createClass(PricingRules, [{ key: 'total', value: function total(
+  }_createClass(PricingRules, [{ key: 'calc', value: function calc(
 
     items) {
       /*** cari */

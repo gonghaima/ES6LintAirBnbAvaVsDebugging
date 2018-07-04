@@ -1,9 +1,9 @@
 'use strict';
+
 var _pricingRules = require('./pricingRules');var _pricingRules2 = _interopRequireDefault(_pricingRules);
-var _checkout = require('./checkout');var _checkout2 = _interopRequireDefault(_checkout);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var CheckOut = require('./checkout');
+var _checkout = require('./checkout');var _checkout2 = _interopRequireDefault(_checkout);function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}var CheckOut = require('./checkout'); // import PricingRules from './pricingRules';
 
 var co = new _checkout2.default(new _pricingRules2.default());
-
 co.scan('cari');
 co.scan('cari');
 co.scan('cari');

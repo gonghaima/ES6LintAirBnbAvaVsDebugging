@@ -9,7 +9,7 @@ export default class PricingRules {
     this.productList = JSON.parse(JSON.stringify(productData));
   }
 
-  total(items){
+  calc(items){
     let total = cariRule(items, this.productList) 
     + homiRule(items, this.productList)
     + heaiRule(items, this.productList)
