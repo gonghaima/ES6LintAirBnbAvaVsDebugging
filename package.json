@@ -6,6 +6,7 @@
   "scripts": {
     "test": "ava ./test/",
     "test-watch": "npm test -- --watch",
+    "test-coverage": "nyc ava --timeout=3000",
     "build": "babel src -d dist --source-maps",
     "bn": "babel server --out-dir build --presets=es2015 && webpack",
     "start": "babel-node ./src/index.js",
@@ -22,12 +23,17 @@
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-register": "^6.26.0",
+    "nyc": "^12.0.2",
     "rimraf": "^2.6.2"
   },
-  "ava":  {
-    "require": ["babel-register"]
+  "ava": {
+    "require": [
+      "babel-register"
+    ]
   },
   "babel": {
-    "presets": ["@ava/stage-4"]
+    "presets": [
+      "@ava/stage-4"
+    ]
   }
 }
