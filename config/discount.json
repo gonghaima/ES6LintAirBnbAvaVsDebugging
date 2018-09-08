@@ -17,8 +17,6 @@
   "peti": {
     "index": 4,
     "alias": "peti",
-    "discountEligible": 4,
-    "discountRate": 499.99,
     "defaultCount": 0
   }
 }
