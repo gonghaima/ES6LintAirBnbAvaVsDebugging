@@ -1,5 +1,6 @@
 import productData from '../config/product.json';
 import discountData from '../config/discount.json';
+
 export default class Checkout {
   constructor(priceRules) {
     this.priceRules = priceRules;
@@ -10,29 +11,33 @@ export default class Checkout {
 
   // Getter
   get checkoutName() {
-    const rl = this.priceRule;
-    return 'myCheckout Name';
+    return JSON.stringify(this.items);
   }
 
   scan(item) {
     const result = this.items.push(item);
     return result;
   }
+
   total() {
     const that = this;
-    let summaryList = Object.entries(this.priceRules).map(([key, applyRule]) =>{
-      return applyRule(that.items, that.productList, that.discountData);
-      });
-    
+    /* eslint-disable */
+    const summaryList = Object.entries(this.priceRules).map(
+      ([key, applyRule]) =>
+        applyRule(that.items, that.productList, that.discountData)
+    );
+    /* eslint-enable */
 
-    let total = summaryList.reduce((a, b) =>  a + b , 0);
- 
+    const total = summaryList.reduce((a, b) => a + b, 0);
+
     return this.format(total);
   }
+  /* eslint-disable */
   format(data) {
     if (Math.floor(data) === data) {
-      return `\$ ${data}.00`;
+      return `$ ${data}.00`;
     }
-    return `\$ ${data}`
+    return `$ ${data}`;
   }
-};
+  /* eslint-enable */
+}
