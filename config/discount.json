@@ -1,0 +1,24 @@
+{
+  "cari": {
+    "index": 1,
+    "alias": "cari",
+    "freeEligible": 3
+  },
+  "heai": {
+    "index": 2,
+    "alias": "heai"
+  },
+  "homi": {
+    "index": 3,
+    "alias": "homi",
+    "discountEligible": 4,
+    "discountRate": 499.99
+  },
+  "peti": {
+    "index": 4,
+    "alias": "peti",
+    "discountEligible": 4,
+    "discountRate": 499.99,
+    "defaultCount": 0
+  }
+}

@@ -1,8 +1,10 @@
 import productData from '../config/product.json';
+import discountData from '../config/discount.json';
 export default class Checkout {
   constructor(priceRules) {
     this.priceRules = priceRules;
     this.productList = JSON.parse(JSON.stringify(productData));
+    this.discountData = JSON.parse(JSON.stringify(discountData));
     this.items = [];
   }
 
@@ -19,7 +21,7 @@ export default class Checkout {
   total() {
     const that = this;
     let summaryList = Object.entries(this.priceRules).map(([key, applyRule]) =>{
-      return applyRule(that.items, that.productList);
+      return applyRule(that.items, that.productList, that.discountData);
       });
     
 
