@@ -1,7 +1,5 @@
-const CheckOut = require('./checkout');
-// import PricingRules from './pricingRules';
-// import PricingRules from './pricingRules';
 import Checkout from './checkout';
+const CheckOut = require('./checkout');
 
 const requireDir = require('require-dir');
 const PricingRules = requireDir('./pricingRules');
