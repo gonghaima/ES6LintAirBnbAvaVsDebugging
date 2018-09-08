@@ -1,24 +1,34 @@
+import productData from '../config/product.json';
 export default class Checkout {
-  constructor(priceRule){
-    this.priceRule = priceRule;
-    this.items=[];
+  constructor(priceRules) {
+    this.priceRules = priceRules;
+    this.productList = JSON.parse(JSON.stringify(productData));
+    this.items = [];
   }
 
   // Getter
-  get checkoutName(){
+  get checkoutName() {
     const rl = this.priceRule;
     return 'myCheckout Name';
   }
 
-  scan(item){
+  scan(item) {
     const result = this.items.push(item);
     return result;
   }
-  total(){
-    return this.format(this.priceRule.calc(this.items));
+  total() {
+    const that = this;
+    let summaryList = Object.entries(this.priceRules).map(([key, applyRule]) =>{
+      return applyRule(that.items, that.productList);
+      });
+    
+
+    let total = summaryList.reduce((a, b) =>  a + b , 0);
+ 
+    return this.format(total);
   }
-  format(data){
-    if(Math.floor(data)===data){
+  format(data) {
+    if (Math.floor(data) === data) {
       return `\$ ${data}.00`;
     }
     return `\$ ${data}`

@@ -1,6 +1,6 @@
 import test from 'ava';
-import  {petiRule} from '../src/pricingRules/petiRule';
 import productData from '../config/product.json'
+const petiRule =  require('../src/pricingRules/petiRule');
 
 const items = ["heai"];
 const items_discount_peti_1 = ["heai","peti"];

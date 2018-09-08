@@ -1,16 +1,19 @@
 const CheckOut = require('./checkout');
 // import PricingRules from './pricingRules';
-import PricingRules from './pricingRules';
+// import PricingRules from './pricingRules';
 import Checkout from './checkout';
 
-var co = new Checkout(new PricingRules());
+const requireDir = require('require-dir');
+const PricingRules = requireDir('./pricingRules');
+
+var co = new Checkout(PricingRules);
 co.scan('cari');
 co.scan('cari');
 co.scan('cari');
 co.scan('peti');
 var total1= co.total();
 
-var co1 = new Checkout(new PricingRules());
+var co1 = new Checkout(PricingRules);
 co1.scan('cari');
 co1.scan('homi');
 co1.scan('homi');
@@ -20,7 +23,7 @@ co1.scan('homi');
 co1.scan('homi');
 var total2= co1.total();
 
-var co2 = new Checkout(new PricingRules());
+var co2 = new Checkout(PricingRules);
 co2.scan('heai');
 co2.scan('peti');
 co2.scan('homi');

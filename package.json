@@ -15,7 +15,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "express": "^4.16.3",
+    "require-dir": "^1.0.0"
   },
   "devDependencies": {
     "ava": "0.25",

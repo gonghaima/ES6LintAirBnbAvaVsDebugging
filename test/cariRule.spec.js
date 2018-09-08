@@ -1,6 +1,6 @@
 import test from 'ava';
-import  {cariRule} from '../src/pricingRules/cariRule';
 import productData from '../config/product.json'
+const cariRule =  require('../src/pricingRules/cariRule');
 
 const items = ["cari","cari"];
 const items_discount_3 = ["cari","cari","cari"];

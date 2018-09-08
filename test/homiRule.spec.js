@@ -1,6 +1,6 @@
 import test from 'ava';
-import  {homiRule} from '../src/pricingRules/homiRule';
 import productData from '../config/product.json'
+const homiRule = require('../src/pricingRules/homiRule');
 
 const items = ["homi"];
 const items_discount_peti_1 = ["homi","homi","homi","homi","homi"];
