@@ -22,17 +22,19 @@ export default class Checkout {
   total() {
     const that = this;
     /* eslint-disable */
+    let mappedDiscountData={};
+     this.discountData.map((item)=>{
+      mappedDiscountData[item.name] = item;
+    });
     const summaryList = Object.entries(this.priceRules).map(
       ([key, applyRule]) =>
-        applyRule(that.items, that.productList, that.discountData)
+        applyRule(that.items, that.productList, mappedDiscountData)
     );
-    /* eslint-enable */
-
     const total = summaryList.reduce((a, b) => a + b, 0);
 
     return this.format(total);
   }
-  /* eslint-disable */
+
   format(data) {
     if (Math.floor(data) === data) {
       return `$ ${data}.00`;

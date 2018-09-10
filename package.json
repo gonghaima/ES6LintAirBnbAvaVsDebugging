@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ava ./test/",
+    "test": "ava ./test/pricingRules",
     "test-watch": "npm test -- --watch",
     "test-coverage": "nyc ava --timeout=3000",
     "build": "babel src -d dist --source-maps",
@@ -16,6 +16,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/preset-react": "^7.0.0",
     "express": "^4.16.3",
     "require-dir": "^1.0.0"
   },
@@ -36,11 +37,6 @@
   "ava": {
     "require": [
       "babel-register"
-    ]
-  },
-  "babel": {
-    "presets": [
-      "@ava/stage-4"
     ]
   }
 }

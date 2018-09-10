@@ -1,8 +1,8 @@
 import test from 'ava';
-import productData from '../config/product.json';
-import discountData from '../config/discount.json';
+import productData from '../../config/product.json';
+import discountData from '../mockData/mappedDiscount';
 
-const petiRule = require('../src/pricingRules/petiRule');
+const petiRule = require('../../src/pricingRules/petiRule');
 
 const items = ['heai'];
 const itemsDiscountPeti = ['heai', 'peti'];

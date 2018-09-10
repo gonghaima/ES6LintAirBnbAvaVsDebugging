@@ -21,10 +21,14 @@ Checkout = function () {
 
     {
       var that = this;
+      /* eslint-disable */
+      var mappedDiscountData = {};
+      this.discountData.map(function (item) {
+        mappedDiscountData[item.name] = item;
+      });
       var summaryList = Object.entries(this.priceRules).map(
       function (_ref) {var _ref2 = _slicedToArray(_ref, 2),key = _ref2[0],applyRule = _ref2[1];return (
-          applyRule(that.items, that.productList, that.discountData));});
-
+          applyRule(that.items, that.productList, mappedDiscountData));});
 
       var total = summaryList.reduce(function (a, b) {return a + b;}, 0);
 
@@ -36,5 +40,6 @@ Checkout = function () {
         return '$ ' + data + '.00';
       }
       return '$ ' + data;
-    } }, { key: 'checkoutName', get: function get() {return 'myCheckout Name';} }]);return Checkout;}();exports.default = Checkout;
+    }
+    /* eslint-enable */ }, { key: 'checkoutName', get: function get() {return JSON.stringify(this.items);} }]);return Checkout;}();exports.default = Checkout;
 //# sourceMappingURL=checkout.js.map

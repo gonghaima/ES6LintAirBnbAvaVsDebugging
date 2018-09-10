@@ -1,8 +1,8 @@
 import test from 'ava';
-import productData from '../config/product.json';
-import discountData from '../config/discount.json';
+import productData from '../../config/product.json';
+import discountData from '../mockData/mappedDiscount';
 
-const cariRule = require('../src/pricingRules/cariRule');
+const cariRule = require('../../src/pricingRules/cariRule');
 
 const items = ['cari', 'cari'];
 const threeItems = ['cari', 'cari', 'cari'];

@@ -1,8 +1,8 @@
 import test from 'ava';
-import productData from '../config/product.json';
-import discountData from '../config/discount.json';
+import productData from '../../config/product.json';
+import discountData from '../mockData/mappedDiscount';
 
-const homiRule = require('../src/pricingRules/homiRule');
+const homiRule = require('../../src/pricingRules/homiRule');
 
 const items = ['homi'];
 const twoItems = ['homi', 'homi'];
