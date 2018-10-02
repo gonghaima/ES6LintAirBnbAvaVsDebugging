@@ -4,8 +4,8 @@ import discountData from '../config/discount.json';
 export default class Checkout {
   constructor(priceRules) {
     this.priceRules = priceRules;
-    this.productList = JSON.parse(JSON.stringify(productData));
-    this.discountData = JSON.parse(JSON.stringify(discountData));
+    this.productList = productData;
+    this.discountData = discountData;
     this.items = [];
   }
 
